@@ -1,0 +1,59 @@
+<nav class="navbar navbar-dark green container">
+  <h4 class="bgWhiteHeader">Team</h4>
+  <div class="input-group w-auto d-flex justify-content-end ml2">
+    <div class="search-box">
+      <input
+        class="form-control py-2 rounded-pill textStyle"
+        type="search"
+        placeholder="Search..."
+        [(ngModel)]="searchQuery"
+      />
+    </div>
+  </div>
+</nav>
+<div class="container border bg-light">
+  <div class="row m-1">
+    <h3 class="bgWhiteHeaderSection">Administration</h3>
+    <div
+      class="col-lg-3 col-md-6 col-sm-12 col-12"
+      *ngFor="let admin of getFilteredUsers('admin')"
+    >
+      <div class="row my-3 card-container">
+        <div class="col-md-3 my-1">
+          <div class="circle">
+            <img [src]="admin.img" alt="{{ admin.first_name }}" />
+          </div>
+        </div>
+        <div class="col-md-9 px-3">
+          <p class="FontonePoppinsExtraLight my-2">
+            {{ admin.first_name }} {{ admin.last_name }}
+          </p>
+          <p class="FontonePoppinsExtraLightSmall my-2">{{ admin.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row m-1">
+    <h3 class="bgWhiteHeaderSection">Members</h3>
+    <div
+      class="col-lg-3 col-md-6 col-sm-12 col-12"
+      *ngFor="let member of getFilteredUsers('member')"
+    >
+      <div class="row my-3 card-container">
+        <div class="col-md-3 my-1">
+          <div class="circle">
+            <img [src]="member.img" alt="{{ member.first_name }}" />
+          </div>
+        </div>
+        <div class="col-md-9 px-3">
+          <p class="FontonePoppinsExtraLight my-2">
+            {{ member.first_name }} {{ member.last_name }}
+          </p>
+          <p class="FontonePoppinsExtraLightSmall my-2">{{ member.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
